@@ -1,36 +1,86 @@
 <!doctype html>
 <html lang="de">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,follow">
-<title>Impressum · LED-Werbetafeln OWL</title>
-<meta name="theme-color" content="#0b0f14">
+<meta name="theme-color" content="#0a0f14">
 <style>
-:root{--ink:#0b0f14;--paper:#f5f4ef;--muted:#626b72;--line:#d7d9d7;--max:980px}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65}
-.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}header{background:var(--ink);color:#fff}.head{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-a{color:inherit}.brand{text-decoration:none;font-weight:800}.back{font-size:14px;color:#cbd2d6;text-decoration:none}
-main{padding:72px 0 100px}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin:0 0 10px}
-h1{font-size:clamp(46px,7vw,72px);line-height:.95;letter-spacing:-.04em;margin:0 0 46px}
-.legal{max-width:760px;border-top:1px solid var(--line);padding-top:30px}.legal h2{font-size:22px;margin:34px 0 10px}.legal h2:first-child{margin-top:0}.legal p{margin:0 0 16px}.legal a{text-underline-offset:3px}
-footer{background:var(--ink);color:#7f898f;padding:26px 0;font-size:12px}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{color:#d0d6d9;text-decoration:none}
+:root{--ink:#0a0f14;--paper:#f4f1e9;--paper2:#faf8f2;--muted:#68727a;--line:#d6d9d6;--accent:#ffd400;--max:1100px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper2);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+header{background:var(--ink);color:#fff;border-bottom:1px solid #273039}
+.head{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:850;letter-spacing:.01em}
+.brand-mark{width:28px;height:28px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3px}
+.brand-mark span{background:var(--accent)}
+.brand-owl{color:var(--accent)}
+.back{font-size:14px;color:#c5cdd2;text-decoration:none;border:1px solid #3b464e;padding:9px 13px}
+.back:hover{color:#fff;border-color:#68747d}
+main{padding:84px 0 110px}
+.kicker{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--muted);font-size:11px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.kicker:before{content:"";width:26px;height:3px;background:var(--accent)}
+h1{font-size:clamp(50px,7vw,78px);line-height:.94;letter-spacing:-.05em;margin:0 0 52px}
+.legal{max-width:820px;border-top:1px solid var(--line);padding-top:34px}
+.legal h2{font-size:22px;line-height:1.25;letter-spacing:-.02em;margin:38px 0 11px}
+.legal h2:first-child{margin-top:0}
+.legal p{margin:0 0 17px;color:#343b40}
+.legal strong{color:var(--ink)}
+.legal a{text-underline-offset:3px;text-decoration-thickness:1px}
+.legal ul{margin:0 0 20px;padding-left:20px;color:#343b40}
+.note{border-left:3px solid var(--accent);padding:8px 0 8px 14px;margin:24px 0;color:#4f585e;font-size:14px}
+footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
+.footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer a{color:#cbd1d4;text-decoration:none}
+.footer a:hover{color:#fff}
+@media(max-width:640px){
+  .wrap{width:calc(100% - 34px)}
+  .head{height:74px;gap:12px}
+  .brand{gap:9px;font-size:13px}
+  .brand-mark{width:24px;height:24px}
+  .back{font-size:12px;padding:7px 9px}
+  main{padding:62px 0 82px}
+  h1{font-size:44px;margin-bottom:38px}
+  .legal{padding-top:28px}
+  .legal h2{font-size:20px;margin-top:32px}
+}
 </style>
+<title>Impressum · LED-Werbetafeln OWL</title>
+<meta name="description" content="Rechtliche Angaben zu LED-Werbetafeln OWL.">
 </head>
 <body>
-<header><div class="wrap head"><a class="brand" href="./">LED-WERBETAFELN OWL</a><a class="back" href="./">Zurück</a></div></header>
-<main><div class="wrap"><p class="kicker">Rechtliche Angaben</p><h1>Impressum</h1><div class="legal">
-<h2>Angaben gemäß § 5 DDG</h2>
-<p><strong>Emotive Systems GmbH</strong><br>Hohenloher Weg 44<br>33102 Paderborn</p>
-<h2>Vertreten durch</h2>
-<p>Geschäftsführer: Nikita Dohrenkamp, Stephan Gehle</p>
-<h2>Kontakt</h2>
-<p>Telefon: <a href="tel:+4952515449191">+49 (0) 5251 5449191</a><br>E-Mail: <a href="mailto:info@pixelgold.de">info@pixelgold.de</a></p>
-<h2>Registereintrag</h2>
-<p>Registergericht: Amtsgericht Paderborn<br>Registernummer: HRB 12339</p>
-<h2>Umsatzsteuer-ID</h2>
-<p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>DE305749988</p>
-</div></div></main>
+<header><div class="wrap head"><a class="brand" href="./" aria-label="LED-Werbetafeln OWL Startseite">
+  <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+  <span>LED-WERBETAFELN <span class="brand-owl">OWL</span></span>
+</a><a class="back" href="./">Zurück zur Startseite</a></div></header>
+<main>
+  <div class="wrap">
+    <p class="kicker">Rechtliche Angaben</p>
+    <h1>Impressum</h1>
+    <div class="legal">
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p><strong>Emotive Systems GmbH</strong><br>Hohenloher Weg 44<br>33102 Paderborn</p>
+
+      <h2>Vertreten durch</h2>
+      <p>Geschäftsführer: Nikita Dohrenkamp, Stephan Gehle</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: <a href="tel:+4952515449191">+49 (0) 5251 5449191</a><br>
+      Telefax: +49 (0) 521 92271026<br>
+      E-Mail: <a href="mailto:info@pixelgold.de">info@pixelgold.de</a></p>
+
+      <h2>Registereintrag</h2>
+      <p>Registergericht: Amtsgericht Paderborn<br>Registernummer: HRB 12339</p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>DE305749988</p>
+    </div>
+  </div>
+</main>
 <footer><div class="wrap footer"><span>LED-Werbetafeln OWL · by Pixelgold</span><span><a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a></span></div></footer>
 </body>
 </html>
