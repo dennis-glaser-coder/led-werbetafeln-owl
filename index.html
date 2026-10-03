@@ -57,7 +57,7 @@ h1{font-size:clamp(50px,4.8vw,70px);line-height:.96;letter-spacing:-.05em;margin
 .hero-note span{display:flex;align-items:center;gap:7px}
 .hero-note span:before{content:"✓";color:var(--accent);font-weight:900}
 
-.scene{height:520px;position:relative}
+.scene{height:520px;position:relative;overflow:hidden;background:#171d22}.hero-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 .sky{position:absolute;inset:0 0 110px;background:linear-gradient(180deg,#202935 0,#3f4a54 62%,#717a7f 100%);overflow:hidden}
 .sky:before{content:"";position:absolute;right:-50px;top:45px;width:260px;height:260px;border-radius:50%;background:rgba(255,212,0,.16);filter:blur(3px)}
 .horizon{position:absolute;left:0;right:0;bottom:110px;height:88px;background:linear-gradient(90deg,#1f2a2d 0 15%,#2d383b 15% 30%,#222d30 30% 47%,#364144 47% 62%,#222c30 62% 77%,#323d40 77%);clip-path:polygon(0 54%,8% 54%,8% 34%,14% 34%,14% 48%,25% 48%,25% 16%,33% 16%,33% 45%,45% 45%,45% 29%,56% 29%,56% 50%,69% 50%,69% 19%,76% 19%,76% 44%,90% 44%,90% 28%,100% 28%,100% 100%,0 100%)}
@@ -229,18 +229,8 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
           <span>Persönlicher Ansprechpartner</span>
         </div>
       </div>
-      <div class="scene" aria-label="Illustration einer freistehenden LED-Werbetafel">
-        <div class="sky"></div>
-        <div class="horizon"></div>
-        <div class="road"></div>
-        <div class="billboard">
-          <div class="screen">
-            <div class="screen-art"><strong>IHRE WERBUNG.<br>GROSS.</strong><span>LED · OUTDOOR</span></div>
-          </div>
-          <div class="posts"><div class="post"></div><div class="post"></div></div>
-          <div class="base"></div>
-        </div>
-        <div class="scene-label">Beispiel: freistehende LED-Werbetafel</div>
+      <div class="scene">
+        <img class="hero-photo" src="./ChatGPT-Bild%203.%20Okt.%202026,%2010_02_18.png" alt="Outdoor LED-Werbetafel als Festinstallation">
       </div>
     </div>
   </section>
