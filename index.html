@@ -48,26 +48,23 @@ header{position:absolute;z-index:40;top:0;left:0;right:0;color:#fff;border-botto
 
 /* HERO */
 .hero{position:relative;min-height:760px;background:var(--ink);color:#fff;overflow:hidden;display:flex;align-items:stretch}
-.hero-media{position:absolute;inset:0 0 0 39%;overflow:hidden}
-.hero-media:before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,var(--ink) 0%,rgba(10,15,20,.88) 8%,rgba(10,15,20,.24) 36%,rgba(10,15,20,.06) 70%),linear-gradient(0deg,rgba(10,15,20,.52),transparent 38%)}
-.hero-media:after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(118deg,transparent 0 54%,rgba(255,212,0,.07) 54% 56%,transparent 56% 100%)}
+.hero-media{position:absolute;inset:0 0 0 43%;overflow:hidden}
+.hero-media:before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,var(--ink) 0%,rgba(10,15,20,.94) 12%,rgba(10,15,20,.56) 31%,rgba(10,15,20,.18) 50%,rgba(10,15,20,.03) 72%),linear-gradient(0deg,rgba(10,15,20,.52),transparent 38%)}
+.hero-media:after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(118deg,transparent 0 55%,rgba(255,212,0,.025) 55% 55.7%,transparent 55.7% 100%)}
 .hero-photo{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-inner{position:relative;z-index:3;padding:160px 0 112px;display:flex;align-items:center}
 .hero-copy{width:min(600px,48vw)}
 .eyebrow{display:inline-flex;align-items:center;gap:11px;color:#c9d0d5;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:25px}
 .eyebrow:before{content:"";width:30px;height:3px;background:var(--accent)}
 h1,h2,h3,p{margin-top:0}
-h1{font-size:clamp(54px,5vw,78px);line-height:.94;letter-spacing:-.055em;margin:0 0 28px;max-width:650px}
-.hero p{font-size:19px;color:#c0c8cd;max-width:555px;margin-bottom:34px}
+h1{font-size:clamp(52px,4.7vw,74px);line-height:.96;letter-spacing:-.05em;margin:0 0 28px;max-width:650px}
+.hero p{font-size:19px;color:#c0c8cd;max-width:555px;margin-bottom:42px}
 .actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn{min-height:52px;padding:14px 20px;display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;font-weight:800;font-size:14px;transition:.2s ease}
 .btn.primary{background:var(--accent);color:#111}
 .btn.primary:hover{background:var(--accent-2);transform:translateY(-1px)}
-.btn.secondary{border-color:#59646d;color:#fff;background:rgba(7,11,15,.28)}
-.btn.secondary:hover{border-color:#9da6ad;background:rgba(7,11,15,.52)}
-.hero-note{display:flex;gap:24px;flex-wrap:wrap;margin-top:28px;color:#a4afb6;font-size:12px}
-.hero-note span{display:flex;align-items:center;gap:8px}
-.hero-note span:before{content:"✓";color:var(--accent);font-weight:950}
+.btn.secondary{border-color:#465159;color:#fff;background:rgba(7,11,15,.18)}
+.btn.secondary:hover{border-color:#6d7880;background:rgba(7,11,15,.38)}
 
 /* FACTS */
 .trust{position:relative;z-index:6;background:#080c10;color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -168,7 +165,7 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
 .footer-links a:hover{color:#fff}
 
 @media(max-width:1080px){
-  .hero-media{left:32%}
+  .hero-media{left:36%}
   .hero-copy{width:min(610px,58vw)}
   .config-stage{grid-template-columns:1fr}
   .config-intro{max-width:760px}
@@ -257,10 +254,6 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
         <div class="actions">
           <a class="btn primary" href="#konfigurator">Jetzt konfigurieren</a>
           <a class="btn secondary" href="#kontakt">Projekt besprechen</a>
-        </div>
-        <div class="hero-note">
-          <span>10+ Jahre LED-Erfahrung</span>
-          <span>Persönlicher Ansprechpartner</span>
         </div>
       </div>
     </div>
