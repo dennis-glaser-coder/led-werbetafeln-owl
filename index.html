@@ -142,7 +142,6 @@ h2{font-size:clamp(44px,5vw,70px);line-height:.94;letter-spacing:-.05em;margin-b
 .tech-row{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;padding:30px 0;border-bottom:1px solid #cfd4d1;align-items:start}
 .tech-row strong{font-size:20px;letter-spacing:-.02em}
 .tech-row p{margin:0;color:#59636a;font-size:15px;max-width:760px}
-.tech-index{display:inline-block;color:#a5adaf;font-size:11px;font-weight:850;letter-spacing:.11em;margin-right:16px;vertical-align:3px}
 
 /* PROCESS + CLOSING */
 .process{position:relative;background:#090e13;color:#fff;margin-top:-62px;padding:152px 0 0;clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);overflow:hidden}
@@ -152,11 +151,10 @@ h2{font-size:clamp(44px,5vw,70px);line-height:.94;letter-spacing:-.05em;margin-b
 .process-intro h2{font-size:clamp(44px,4.8vw,66px);max-width:520px;margin-bottom:20px}
 .process-intro p{color:#9da7ad;max-width:430px;margin:0}
 .steps{border-top:1px solid #323b42}
-.step{display:grid;grid-template-columns:70px 1fr;gap:18px;padding:28px 0;border-bottom:1px solid #323b42;position:relative}
-.step-number{font-size:12px;font-weight:900;color:var(--accent);letter-spacing:.1em;padding-top:5px}
+.step{display:block;padding:28px 0;border-bottom:1px solid #323b42;position:relative}
 .step h3{font-size:23px;margin-bottom:8px;letter-spacing:-.02em}
 .step p{font-size:13px;color:#9da7ad;margin:0;max-width:600px}
-.partner-note{margin:26px 0 0;padding-left:88px;color:#d7dcdf;font-size:13px;font-weight:650;max-width:720px}
+.partner-note{margin:26px 0 0;color:#d7dcdf;font-size:13px;font-weight:650;max-width:720px}
 
 .closing{position:relative;z-index:3;width:100vw;margin-left:calc(50% - 50vw);margin-top:88px;background:var(--accent);color:#111}
 .closing-inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:start;padding:64px 0}
@@ -251,7 +249,7 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .tech-flow{margin-top:52px}
   .tech-row{padding:24px 0}
   .process{margin-top:-42px;padding-top:105px;clip-path:polygon(0 38px,100% 0,100% 100%,0 100%)}
-  .step{grid-template-columns:46px 1fr;gap:12px;padding:24px 0}
+  .step{padding:24px 0}
   .partner-note{margin-top:22px}
   .closing{margin-top:54px}
   .closing-inner{padding:44px 0}
@@ -295,7 +293,6 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .summary-meta{grid-template-columns:1fr}
   .summary-fact{border-bottom:1px solid #222c33}
   .summary-fact:last-child{border-bottom:0}
-  .step{grid-template-columns:38px 1fr}
 }
 </style>
 </head>
@@ -457,15 +454,15 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
 
       <div class="tech-flow">
         <div class="tech-row">
-          <strong><span class="tech-index">01</span>Standort &amp; Aufstellung</strong>
+          <strong>Standort &amp; Aufstellung</strong>
           <p>Montageort, Sichtabstand, Stromversorgung und Wunschgröße klären wir zuerst.</p>
         </div>
         <div class="tech-row">
-          <strong><span class="tech-index">02</span>Technische Auslegung</strong>
+          <strong>Technische Auslegung</strong>
           <p>Pixelpitch, Helligkeit, Ausführung und Unterkonstruktion stimmen wir auf den Standort ab.</p>
         </div>
         <div class="tech-row">
-          <strong><span class="tech-index">03</span>Montage vor Ort</strong>
+          <strong>Montage vor Ort</strong>
           <p>Lieferung, Unterbau bzw. Fundament, Montage und Inbetriebnahme werden passend zum Projekt geplant.</p>
         </div>
       </div>
@@ -483,19 +480,15 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
         <div>
           <div class="steps">
             <div class="step">
-              <div class="step-number">01</div>
               <div><h3>Anfrage senden</h3><p>Standort, Wunschgröße und Aufstellung reichen für den Start.</p></div>
             </div>
             <div class="step">
-              <div class="step-number">02</div>
               <div><h3>Standort prüfen</h3><p>Wir klären Sichtabstand, Stromversorgung und Montagesituation.</p></div>
             </div>
             <div class="step">
-              <div class="step-number">03</div>
               <div><h3>Technik festlegen</h3><p>Größe, Pixelpitch, Helligkeit, Ausführung und Unterkonstruktion werden festgelegt.</p></div>
             </div>
             <div class="step">
-              <div class="step-number">04</div>
               <div><h3>Montieren</h3><p>Lieferung, Aufbau und Inbetriebnahme vor Ort.</p></div>
             </div>
           </div>
