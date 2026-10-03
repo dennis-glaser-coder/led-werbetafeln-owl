@@ -114,10 +114,10 @@ h2{font-size:clamp(42px,5vw,68px);line-height:.96;letter-spacing:-.045em;margin-
 .summary-screen{width:100%;aspect-ratio:5/3;border:4px solid #303b43;background:linear-gradient(145deg,#111a21,#0b1116);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
 .summary-size{font-size:clamp(24px,2.2vw,34px);font-weight:900;letter-spacing:-.04em;line-height:1;color:#fff}
 .summary-area{margin-top:10px;font-size:18px;font-weight:850;color:var(--accent)}
-.summary-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.summary-card{border:1px solid #27323a;background:#0f151a;padding:13px 14px;min-height:68px}
-.summary-card span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#7f8a91;font-weight:800;margin-bottom:5px}
-.summary-card strong{display:block;font-size:13px;line-height:1.3;color:#f4f6f7}
+.summary-meta{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;margin-bottom:22px;padding:4px 0;border-top:1px solid #29333a;border-bottom:1px solid #29333a}
+.summary-fact{padding:12px 0}
+.summary-fact span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#7f8a91;font-weight:800;margin-bottom:5px}
+.summary-fact strong{display:block;font-size:13px;line-height:1.3;color:#f4f6f7}
 .summary-cta{margin-top:0}
 .summary-cta .btn{width:100%}
 .summary-note{font-size:11px;color:#7f8a91;margin:12px 0 0;line-height:1.45}
@@ -137,16 +137,6 @@ h2{font-size:clamp(42px,5vw,68px);line-height:.96;letter-spacing:-.045em;margin-
 .step h3{font-size:22px;margin-bottom:8px}
 .step p{font-size:13px;color:var(--muted);margin:0}.step .partner-note{margin-top:10px;color:#3f474c;font-weight:650}
 
-.experience{background:var(--ink);color:#fff}
-.experience-grid{display:block}.stats-row{display:flex;gap:58px;align-items:flex-end;flex-wrap:wrap}.stat-block{min-width:180px}
-.experience h2{margin-bottom:26px}
-.experience p{color:#aab4ba;max-width:580px}
-.stat{font-size:92px;line-height:.9;font-weight:900;letter-spacing:-.07em;color:var(--accent)}
-.stat-label{margin-top:10px;color:#c1c8cc;font-weight:700}
-.experience-card{border:1px solid #2b343a;padding:38px;background:#11171c}
-.experience-card strong{display:block;font-size:24px;margin-bottom:12px}
-.experience-card p{margin:0;font-size:14px}
-
 .contact{background:var(--accent);color:#111;padding:72px 0}
 .contact-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
 .contact h2{font-size:clamp(40px,4vw,58px)}
@@ -159,7 +149,7 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
 .footer-links a:hover{color:#fff}
 
 @media(max-width:980px){
-  .hero-grid,.experience-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
   .scene{height:430px;max-width:650px}
   .trust-grid{grid-template-columns:1fr 1fr}
   .trust-item:nth-child(2){border-right:0}
@@ -240,8 +230,8 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
   <div class="trust">
     <div class="wrap trust-grid">
       <div class="trust-item"><strong>10+ Jahre</strong><span>Erfahrung mit LED-Technik</span></div>
-      <div class="trust-item"><strong>Neu &amp; refurbished</strong><span>Passend zum Projekt</span></div>
-      <div class="trust-item"><strong>Planung &amp; Montage</strong><span>Aus einer Hand</span></div>
+      <div class="trust-item"><strong>300+ Kunden</strong><span>Erfahrung aus realen Projekten</span></div>
+      <div class="trust-item"><strong>Planung &amp; Montage</strong><span>Bis zur Inbetriebnahme</span></div>
       <div class="trust-item"><strong>OWL</strong><span>Kurze Wege, direkter Kontakt</span></div>
     </div>
   </div>
@@ -321,19 +311,19 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
           </div>
 
           <div class="summary-meta">
-            <div class="summary-card">
+            <div class="summary-fact">
               <span>Ausführung</span>
               <strong><span id="sumMount">Fassade</span> · <span id="sumSides">Einseitig</span></strong>
             </div>
-            <div class="summary-card">
+            <div class="summary-fact">
               <span>Pixelpitch</span>
               <strong id="sumPitch">ca. P4–P5</strong>
             </div>
-            <div class="summary-card">
+            <div class="summary-fact">
               <span>System</span>
               <strong id="sumSystem">Empfehlung</strong>
             </div>
-            <div class="summary-card">
+            <div class="summary-fact">
               <span>Standort</span>
               <strong id="sumLocation">noch offen</strong>
             </div>
@@ -351,17 +341,17 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
   <section class="solutions" id="loesungen">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="kicker">System wählen</div><h2>Neu oder refurbished.</h2></div>
-        <p>Beides kann sinnvoll sein. Entscheidend ist, was zum Standort und Budget passt.</p>
+        <div><h2>Neu oder refurbished.</h2></div>
+        <p>Wir prüfen, welche Variante technisch und wirtschaftlich zum Standort passt.</p>
       </div>
       <div class="solution-grid">
         <article class="solution">
-          <div><small>Neu</small><h3>Neue LED-Anlage</h3><p>Aktuelle Technik, frei geplant und auf den Standort abgestimmt.</p></div>
-          <div class="mini">Für langfristige Neuinstallationen</div>
+          <div><small>Neu</small><h3>Neue LED-Werbetafel</h3><p>Technik, Größe und Konstruktion werden für den Standort neu geplant.</p></div>
+          <div class="mini">Für neue Standorte und individuelle Abmessungen</div>
         </article>
         <article class="solution">
-          <div><small>Refurbished</small><h3>Refurbished LED-Anlage</h3><p>Geprüfte Technik, wenn sie zum Projekt passt.</p></div>
-          <div class="mini">Wir prüfen Verfügbarkeit und Zustand</div>
+          <div><small>Refurbished</small><h3>Refurbished LED-Werbetafel</h3><p>Wir prüfen vorab, ob Zustand, Helligkeit und Verfügbarkeit zum Einsatz passen.</p></div>
+          <div class="mini">Sinnvoll, wenn passende Technik verfügbar ist</div>
         </article>
       </div>
     </div>
@@ -370,26 +360,14 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
   <section class="process" id="ablauf">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="kicker">Ablauf</div><h2>Einfach zur fertigen LED-Werbetafel.</h2></div>
-        <p>Sie sagen, was Sie brauchen. Wir planen und montieren.</p>
+        <div><h2>Von der Fläche zur fertigen LED-Werbetafel.</h2></div>
+        <p>Standort, Technik und Montage werden Schritt für Schritt geklärt.</p>
       </div>
       <div class="steps">
-        <div class="step"><h3>Konfigurieren</h3><p>Größe, Aufstellung und Ausführung wählen.</p></div>
-        <div class="step"><h3>Prüfen</h3><p>Wir klären Standort und technische Details.</p></div>
-        <div class="step"><h3>Planen</h3><p>Sie erhalten eine passende Lösung für Ihr Projekt.</p><p class="partner-note">Für Gestaltung, Inhalte und Vermarktung können wir auf Wunsch passende Partner einbinden.</p></div>
-        <div class="step"><h3>Montieren</h3><p>Lieferung, Aufbau und Inbetriebnahme.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="experience">
-    <div class="wrap experience-grid">
-      <div>
-        <div class="kicker">Erfahrung</div>
-        <div class="stats-row">
-          <div class="stat-block"><div class="stat">10+</div><div class="stat-label">Jahre LED-Technik</div></div>
-          <div class="stat-block"><div class="stat">300+</div><div class="stat-label">Kunden</div></div>
-        </div>
+        <div class="step"><h3>Standort prüfen</h3><p>Montageort, Sichtachse, Stromversorgung und Wunschgröße klären.</p></div>
+        <div class="step"><h3>Technik festlegen</h3><p>Pixelpitch, Helligkeit, Ausführung und Unterkonstruktion passend zum Standort bestimmen.</p></div>
+        <div class="step"><h3>Umsetzung abstimmen</h3><p>Montage, Unterbau bzw. Fundament und Termin werden konkret geplant.</p><p class="partner-note">Für Gestaltung, Inhalte und Vermarktung können wir auf Wunsch passende Partner einbinden.</p></div>
+        <div class="step"><h3>Montieren</h3><p>Lieferung, Aufbau und Inbetriebnahme vor Ort.</p></div>
       </div>
     </div>
   </section>
