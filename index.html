@@ -159,11 +159,31 @@ h2{font-size:clamp(44px,5vw,70px);line-height:.94;letter-spacing:-.05em;margin-b
 .partner-note{margin:26px 0 0;padding-left:88px;color:#d7dcdf;font-size:13px;font-weight:650;max-width:720px}
 
 .closing{position:relative;z-index:3;width:100vw;margin-left:calc(50% - 50vw);margin-top:88px;background:var(--accent);color:#111}
-.closing-inner{display:grid;grid-template-columns:1fr auto;gap:54px;align-items:center;padding:62px 0}
+.closing-inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:start;padding:64px 0}
 .closing h2{font-size:clamp(40px,4vw,58px);margin-bottom:12px}
-.closing p{margin:0;max-width:650px;font-size:16px}
-.closing .btn{background:#111;color:#fff;min-width:220px}
-.closing .btn:hover{transform:translateY(-1px)}
+.closing-copy>p{margin:0;max-width:520px;font-size:16px}
+.inquiry-card{background:#fff;padding:30px;color:var(--ink);box-shadow:0 22px 55px rgba(8,12,16,.16)}
+.inquiry-config{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;border-top:1px solid #d8dad6;border-bottom:1px solid #d8dad6;margin-bottom:24px}
+.inquiry-config div{padding:11px 0}
+.inquiry-config span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#7b858a;margin-bottom:3px}
+.inquiry-config strong{font-size:14px;line-height:1.25}
+.config-edit{display:inline-flex;margin:0 0 24px;font-size:12px;font-weight:850;text-decoration:underline;text-underline-offset:4px}
+.inquiry-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.inquiry-field{display:flex;flex-direction:column;gap:6px}
+.inquiry-field.wide{grid-column:1/-1}
+.inquiry-field label{font-size:11px;font-weight:800;color:#626c72}
+.inquiry-field input,.inquiry-field textarea{width:100%;border:1px solid #cfd5d6;background:#fff;color:var(--ink);border-radius:0;padding:12px}
+.inquiry-field input{height:48px}
+.inquiry-field textarea{min-height:96px;resize:vertical}
+.privacy-check{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:11px;color:#5e686e;line-height:1.45;margin-top:4px}
+.privacy-check input{margin-top:3px;accent-color:#111}
+.privacy-check a{text-decoration:underline;text-underline-offset:2px}
+.inquiry-submit{grid-column:1/-1}
+.inquiry-submit .btn{width:100%;background:#111;color:#fff;border:0}
+.inquiry-submit .btn:disabled{opacity:.55;cursor:wait}
+.form-status{grid-column:1/-1;margin:0;font-size:12px;min-height:18px}
+.form-status.success{color:#1d642f}
+.form-status.error{color:#a1261d}
 
 /* FOOTER */
 footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
@@ -235,6 +255,10 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .partner-note{margin-top:22px}
   .closing{margin-top:54px}
   .closing-inner{padding:44px 0}
+  .inquiry-card{padding:22px}
+  .inquiry-fields{grid-template-columns:1fr}
+  .inquiry-field.wide,.privacy-check,.inquiry-submit,.form-status{grid-column:auto}
+  .inquiry-config{grid-template-columns:1fr}
   .closing .btn{width:100%}
 }
 @media(max-width:430px){
@@ -412,7 +436,7 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
             <div class="summary-fact"><span>Standort</span><strong id="sumLocation">noch offen</strong></div>
           </div>
           <div class="summary-cta">
-            <a class="btn primary" id="configMail" href="mailto:info@pixelgold.de">Konfiguration anfragen</a>
+            <a class="btn primary" id="configRequest" href="#kontakt">Konfiguration anfragen</a>
             <p class="summary-note">Wir prüfen Standort und Ausführung und melden uns mit einer ersten Einschätzung.</p>
           </div>
         </aside>
@@ -481,11 +505,69 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
 
       <div class="closing" id="kontakt">
         <div class="wrap closing-inner">
-          <div>
-            <h2>Schon eine Fläche im Kopf?</h2>
-            <p>Schicken Sie uns Standort und Wunschgröße. Wir melden uns mit einer ersten Einschätzung.</p>
+          <div class="closing-copy">
+            <h2>Konfiguration anfragen.</h2>
+            <p>Ihre Angaben aus dem Konfigurator sind bereits übernommen. Ergänzen Sie nur noch Ihre Kontaktdaten.</p>
           </div>
-          <a class="btn" href="mailto:info@pixelgold.de?subject=LED-Werbetafel%20OWL%20Anfrage">Projekt anfragen</a>
+
+          <form class="inquiry-card" id="inquiryForm" novalidate>
+            <div class="inquiry-config" aria-live="polite">
+              <div><span>Ausführung</span><strong id="formConfigMount">Fassade · Einseitig</strong></div>
+              <div><span>Größe</span><strong id="formConfigSize">5,0 × 3,0 m · 15,0 m²</strong></div>
+              <div><span>Pixelpitch</span><strong id="formConfigPitch">ca. P4–P5</strong></div>
+              <div><span>System</span><strong id="formConfigSystem">Empfehlung</strong></div>
+              <div><span>Standort</span><strong id="formConfigLocation">noch offen</strong></div>
+            </div>
+            <a class="config-edit" href="#konfigurator">Konfiguration ändern ↑</a>
+
+            <div class="inquiry-fields">
+              <div class="inquiry-field">
+                <label for="contactName">Name *</label>
+                <input id="contactName" name="contact-name" autocomplete="name" required maxlength="150">
+              </div>
+              <div class="inquiry-field">
+                <label for="company">Firma</label>
+                <input id="company" name="company" autocomplete="organization" maxlength="150">
+              </div>
+              <div class="inquiry-field">
+                <label for="contactEmail">E-Mail *</label>
+                <input id="contactEmail" name="contact-email" type="email" autocomplete="email" required maxlength="200">
+              </div>
+              <div class="inquiry-field">
+                <label for="phone">Telefon <small>(optional)</small></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="80">
+              </div>
+              <div class="inquiry-field wide">
+                <label for="message">Nachricht <small>(optional)</small></label>
+                <textarea id="message" name="message" maxlength="2000" placeholder="z. B. gewünschter Zeitraum oder Hinweis zum Standort"></textarea>
+              </div>
+
+              <label class="privacy-check">
+                <input type="checkbox" name="privacy-consent" value="1" required>
+                <span>Ich habe die <a href="./datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.</span>
+              </label>
+
+              <input type="hidden" name="config-mount" id="formMount">
+              <input type="hidden" name="config-sides" id="formSides">
+              <input type="hidden" name="config-width" id="formWidth">
+              <input type="hidden" name="config-height" id="formHeight">
+              <input type="hidden" name="config-area" id="formArea">
+              <input type="hidden" name="config-distance" id="formDistance">
+              <input type="hidden" name="config-pitch" id="formPitch">
+              <input type="hidden" name="config-system" id="formSystem">
+              <input type="hidden" name="config-zipcode" id="formZipcode">
+              <input type="hidden" name="config-city" id="formCity">
+              <input type="hidden" name="_wpcf7" value="4696">
+              <input type="hidden" name="_wpcf7_locale" value="de_DE">
+              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4696-o1">
+              <input type="hidden" name="_wpcf7_container_post" value="0">
+
+              <div class="inquiry-submit">
+                <button class="btn" id="inquirySubmit" type="submit">Projekt anfragen</button>
+              </div>
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -547,22 +629,25 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
     document.getElementById('sumPitch').textContent=p;
     document.getElementById('pitchHint').textContent='Richtwert: '+p.replace('ca. ','')+' · finale Auslegung nach Standortprüfung.';
     document.getElementById('summaryScreen').style.aspectRatio=w+' / '+h;
-    var body=[
-      'Guten Tag,',
-      '',
-      'ich interessiere mich für eine LED-Werbetafel in OWL.',
-      '',
-      'Aufstellung: '+state.mount,
-      'Ausführung: '+state.sides,
-      'Größe: '+de(w)+' × '+de(h)+' m',
-      'Fläche: '+de(area)+' m²',
-      'Pixelpitch-Empfehlung: '+p,
-      'System: '+state.system,
-      'Standort: '+(location||'nicht angegeben'),
-      '',
-      'Bitte melden Sie sich für die weitere Abstimmung.'
-    ].join('\n');
-    document.getElementById('configMail').href='mailto:info@pixelgold.de?subject='+encodeURIComponent('LED-Werbetafel OWL · '+de(area)+' m²')+'&body='+encodeURIComponent(body);
+
+    var distance=document.getElementById('distance');
+    var distanceText=distance.options[distance.selectedIndex].text;
+    document.getElementById('formConfigMount').textContent=state.mount+' · '+state.sides;
+    document.getElementById('formConfigSize').textContent=de(w)+' × '+de(h)+' m · '+de(area)+' m²';
+    document.getElementById('formConfigPitch').textContent=p;
+    document.getElementById('formConfigSystem').textContent=state.system;
+    document.getElementById('formConfigLocation').textContent=location||'noch offen';
+
+    document.getElementById('formMount').value=state.mount;
+    document.getElementById('formSides').value=state.sides;
+    document.getElementById('formWidth').value=de(w);
+    document.getElementById('formHeight').value=de(h);
+    document.getElementById('formArea').value=de(area);
+    document.getElementById('formDistance').value=distanceText;
+    document.getElementById('formPitch').value=p;
+    document.getElementById('formSystem').value=state.system;
+    document.getElementById('formZipcode').value=zip;
+    document.getElementById('formCity').value=city;
   }
   document.querySelectorAll('[data-group]').forEach(function(group){
     group.querySelectorAll('.choice').forEach(function(btn){
@@ -578,6 +663,53 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
     document.getElementById(id).addEventListener('input',update);
     document.getElementById(id).addEventListener('change',update);
   });
+
+  document.getElementById('configRequest').addEventListener('click',function(){
+    update();
+  });
+
+  var inquiryForm=document.getElementById('inquiryForm');
+  var inquirySubmit=document.getElementById('inquirySubmit');
+  var formStatus=document.getElementById('formStatus');
+
+  inquiryForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!inquiryForm.reportValidity())return;
+
+    inquirySubmit.disabled=true;
+    inquirySubmit.textContent='Wird gesendet …';
+    formStatus.className='form-status';
+    formStatus.textContent='';
+
+    var data=new FormData(inquiryForm);
+    fetch('https://pixelgold-visuals.de/wp-json/contact-form-7/v1/contact-forms/4696/feedback',{
+      method:'POST',
+      body:data
+    })
+    .then(function(r){return r.json().then(function(j){return {ok:r.ok,data:j};});})
+    .then(function(result){
+      var d=result.data||{};
+      if(result.ok && d.status==='mail_sent'){
+        formStatus.className='form-status success';
+        formStatus.textContent='Danke. Ihre Anfrage wurde gesendet.';
+        inquiryForm.reset();
+        update();
+      }else{
+        var message=d.message||'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.';
+        formStatus.className='form-status error';
+        formStatus.textContent=message;
+      }
+    })
+    .catch(function(){
+      formStatus.className='form-status error';
+      formStatus.textContent='Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es später erneut.';
+    })
+    .finally(function(){
+      inquirySubmit.disabled=false;
+      inquirySubmit.textContent='Projekt anfragen';
+    });
+  });
+
   update();
 })();
 </script>
