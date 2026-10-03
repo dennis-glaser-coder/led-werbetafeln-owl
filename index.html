@@ -28,12 +28,12 @@ button{cursor:pointer}
 .wrap{width:min(var(--max),calc(100% - 56px));margin:auto}
 header{position:absolute;z-index:20;top:0;left:0;right:0;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
 .head{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.brand{display:flex;align-items:center;gap:13px;font-weight:800;letter-spacing:-.02em}
-.brand-mark{width:34px;height:34px;border:2px solid var(--accent);display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:5px}
+.brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:-.02em}
+.brand-mark{width:30px;height:30px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:4px}
 .brand-mark span{background:var(--accent)}
-.brand-copy{display:flex;flex-direction:column;line-height:1.05}
+.brand-copy{display:flex;align-items:center;line-height:1}
 .brand-copy strong{font-size:16px;letter-spacing:.02em}
-.brand-copy small{font-size:10px;color:#aeb6bd;font-weight:600;margin-top:4px}
+.brand-owl{color:var(--accent)}
 .nav{display:flex;align-items:center;gap:28px;font-size:14px;color:#cfd5d9}
 .nav a:hover{color:#fff}
 .nav .top-cta{border:1px solid rgba(255,255,255,.45);padding:10px 14px;color:#fff}
@@ -200,8 +200,8 @@ footer{background:#090c0f;color:#7f898f;padding:30px 0;font-size:12px}
 <header>
   <div class="wrap head">
     <a class="brand" href="#top" aria-label="LED-Werbetafeln OWL Startseite">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
-      <span class="brand-copy"><strong>LED-WERBETAFELN OWL</strong></span>
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="brand-copy"><strong>LED-WERBETAFELN <span class="brand-owl">OWL</span></strong></span>
     </a>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menü</button>
     <nav class="nav" id="nav">
