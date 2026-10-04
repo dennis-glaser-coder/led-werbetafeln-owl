@@ -149,6 +149,17 @@ h2{font-size:clamp(44px,5vw,70px);line-height:.94;letter-spacing:-.05em;margin-b
 .tech-row strong{font-size:20px;letter-spacing:-.02em}
 .tech-row p{margin:0;color:#59636a;font-size:15px;max-width:760px}
 
+/* SERVICE + TRUST */
+.service-proof{background:var(--paper-2);padding:18px 0 118px}
+.service-proof-inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:90px;align-items:start;padding-top:34px;border-top:1px solid #cfd4d1}
+.service-proof h2{max-width:520px}
+.service-proof-list{border-top:1px solid #cfd4d1}
+.service-proof-row{display:grid;grid-template-columns:.72fr 1.28fr;gap:44px;padding:26px 0;border-bottom:1px solid #cfd4d1}
+.service-proof-row strong{font-size:19px;letter-spacing:-.02em}
+.service-proof-row p{margin:0;color:#59636a;font-size:15px;max-width:720px}
+.service-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#78848b}
+.service-kicker:before{content:"";width:28px;height:3px;background:var(--accent)}
+
 /* PROCESS + CLOSING */
 .process{position:relative;background:#090e13;color:#fff;margin-top:-62px;padding:152px 0 0;clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);overflow:hidden}
 .process:after{content:"";position:absolute;right:-14%;top:0;width:48%;height:100%;background:linear-gradient(145deg,transparent 0 42%,rgba(255,212,0,.055) 42% 43%,transparent 43% 100%);pointer-events:none}
@@ -166,6 +177,9 @@ h2{font-size:clamp(44px,5vw,70px);line-height:.94;letter-spacing:-.05em;margin-b
 .closing-inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:start;padding:64px 0}
 .closing h2{font-size:clamp(40px,4vw,58px);margin-bottom:12px}
 .closing-copy>p{margin:0;max-width:520px;font-size:16px}
+.direct-contact{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid rgba(17,17,17,.22)}
+.direct-contact a{font-size:13px;font-weight:850;text-decoration:underline;text-underline-offset:4px}
+.direct-contact a:hover{opacity:.7}
 .inquiry-card{background:#fff;padding:30px;color:var(--ink);box-shadow:0 22px 55px rgba(8,12,16,.16)}
 .inquiry-config{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;border-top:1px solid #d8dad6;border-bottom:1px solid #d8dad6;margin-bottom:24px}
 .inquiry-config div{padding:11px 0}
@@ -211,6 +225,7 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .config-intro{max-width:760px}
   .story-head{grid-template-columns:1fr;gap:24px}
   .story-copy{justify-self:start}
+  .service-proof-inner{grid-template-columns:1fr;gap:36px}
   .process-layout{grid-template-columns:1fr;gap:48px}
   .process-intro{position:static}
   .closing-inner{grid-template-columns:1fr}
@@ -230,6 +245,7 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .trust-item:nth-child(-n+2){border-bottom:1px solid #2a3137}
   .config-grid{grid-template-columns:1fr}
   .tech-row{grid-template-columns:1fr;gap:10px}
+  .service-proof-row{grid-template-columns:1fr;gap:8px}
   .process{clip-path:polygon(0 55px,100% 0,100% 100%,0 100%);padding-top:120px}
   .partner-note{padding-left:0}
   .closing{margin-top:68px}
@@ -259,6 +275,8 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .group{margin-bottom:23px}
   .option-row,.option-row.two{grid-template-columns:1fr}
   .product-story{padding:8px 0 86px}
+  .service-proof{padding:8px 0 86px}
+  .service-proof-inner{padding-top:28px}
   .story-head{padding-top:28px}
   .story-copy>p{font-size:17px}
   .tech-flow{margin-top:52px}
@@ -463,7 +481,7 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
         <h2>Neue LED-Werbetafel</h2>
         <div class="story-copy">
           <p>Geplant nach Standort, Größe, Sichtabstand und Technik.</p>
-          <div class="refurb-note">Refurbished Panels prüfen wir auf Wunsch als Budget-Variante.</div>
+          <div class="refurb-note">Refurbished Panels prüfen wir auf Wunsch als wirtschaftliche Alternative.</div>
           <a class="guide-link" href="./ratgeber/">Technik im Ratgeber nachlesen →</a>
         </div>
       </div>
@@ -480,6 +498,30 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
         <div class="tech-row">
           <strong>Montage vor Ort</strong>
           <p>Lieferung, Unterbau bzw. Fundament, Montage und Inbetriebnahme werden passend zum Projekt geplant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-proof" aria-labelledby="service-title">
+    <div class="wrap service-proof-inner">
+      <div>
+        <div class="service-kicker">Betrieb &amp; Service</div>
+        <h2 id="service-title">Für den dauerhaften Betrieb geplant.</h2>
+      </div>
+
+      <div class="service-proof-list">
+        <div class="service-proof-row">
+          <strong>NovaStar Partner</strong>
+          <p>Controller und Ansteuerung planen wir auf Basis professioneller NovaStar-Systeme.</p>
+        </div>
+        <div class="service-proof-row">
+          <strong>Eigene Cloud &amp; Fernsupport</strong>
+          <p>Eigene Server und eine eigene Cloudlösung ermöglichen zentrale Verwaltung und direkten Fernsupport.</p>
+        </div>
+        <div class="service-proof-row">
+          <strong>Vor-Ort-Service &amp; Wartung</strong>
+          <p>Auch nach der Inbetriebnahme unterstützen wir bei Wartung, Service und technischen Fragen vor Ort.</p>
         </div>
       </div>
     </div>
@@ -517,6 +559,10 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
           <div class="closing-copy">
             <h2>Konfiguration anfragen.</h2>
             <p>Ihre Angaben aus dem Konfigurator sind bereits übernommen. Ergänzen Sie nur noch Ihre Kontaktdaten.</p>
+            <div class="direct-contact" aria-label="Direkter Kontakt">
+              <a href="tel:+4952515449191">Direkt sprechen · +49 (0) 5251 5449191</a>
+              <a href="https://wa.me/4952515449191?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20LED-Werbetafel%20und%20m%C3%B6chte%20mein%20Projekt%20besprechen." target="_blank" rel="noopener">Per WhatsApp schreiben</a>
+            </div>
           </div>
 
           <form class="inquiry-card" id="inquiryForm" novalidate>
