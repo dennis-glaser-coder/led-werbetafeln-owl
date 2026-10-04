@@ -195,6 +195,15 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
 .footer-links{display:flex;gap:20px}
 .footer-links a:hover{color:#fff}
 
+@media(min-width:1081px){
+  .config-stage{grid-template-columns:.68fr 1.32fr;gap:42px}
+  .config-intro h2{max-width:430px}
+  .config-grid{grid-template-columns:1.1fr .9fr}
+  .config-main{padding:36px}
+  .choice{min-height:52px;padding:12px 14px}
+  .field input,.field select{height:52px;padding:0 14px}
+}
+
 @media(max-width:1080px){
   .hero-media{left:36%}
   .hero-copy{width:min(610px,58vw)}
