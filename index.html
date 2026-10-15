@@ -41,7 +41,6 @@ img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .skip-link{position:fixed;left:14px;top:14px;z-index:1000;background:#fff;color:#111;padding:10px 14px;font-weight:800;transform:translateY(-180%);transition:transform .16s ease}
 .skip-link:focus{transform:translateY(0)}
-.hp-field{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
 .wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
 
 /* HEADER */
@@ -188,22 +187,10 @@ h2{font-size:clamp(44px,5vw,70px);line-height:.94;letter-spacing:-.05em;margin-b
 .inquiry-config span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#7b858a;margin-bottom:3px}
 .inquiry-config strong{font-size:14px;line-height:1.25}
 .config-edit{display:inline-flex;margin:0 0 24px;font-size:12px;font-weight:850;text-decoration:underline;text-underline-offset:4px}
-.inquiry-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.inquiry-field{display:flex;flex-direction:column;gap:6px}
-.inquiry-field.wide{grid-column:1/-1}
-.inquiry-field label{font-size:11px;font-weight:800;color:#626c72}
-.inquiry-field input,.inquiry-field textarea{width:100%;border:1px solid #cfd5d6;background:#fff;color:var(--ink);border-radius:0;padding:12px}
-.inquiry-field input{height:48px}
-.inquiry-field textarea{min-height:96px;resize:vertical}
-.privacy-check{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:11px;color:#5e686e;line-height:1.45;margin-top:4px}
-.privacy-check input{margin-top:3px;accent-color:#111}
-.privacy-check a{text-decoration:underline;text-underline-offset:2px}
-.inquiry-submit{grid-column:1/-1}
-.inquiry-submit .btn{width:100%;background:#111;color:#fff;border:0}
-.inquiry-submit .btn:disabled{opacity:.55;cursor:wait}
-.form-status{grid-column:1/-1;margin:0;font-size:12px;min-height:18px}
-.form-status.success{color:#1d642f}
-.form-status.error{color:#a1261d}
+.inquiry-mail{display:flex;width:100%;background:#111;color:#fff;border:0}
+.inquiry-mail:hover{opacity:.85}
+.inquiry-note{margin:14px 0 0;font-size:11px;color:#5e686e;line-height:1.45}
+.inquiry-note a{text-decoration:underline;text-underline-offset:2px}
 
 /* FOOTER */
 footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
@@ -289,8 +276,6 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
   .closing{margin-top:54px}
   .closing-inner{padding:44px 0}
   .inquiry-card{padding:22px}
-  .inquiry-fields{grid-template-columns:1fr}
-  .inquiry-field.wide,.privacy-check,.inquiry-submit,.form-status{grid-column:auto}
   .inquiry-config{grid-template-columns:1fr}
   .closing .btn{width:100%}
 }
@@ -606,14 +591,14 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
         <div class="wrap closing-inner">
           <div class="closing-copy">
             <h2>Konfiguration anfragen.</h2>
-            <p>Ihre Angaben aus dem Konfigurator sind bereits übernommen. Ergänzen Sie nur noch Ihre Kontaktdaten.</p>
+            <p>Ihre Angaben aus dem Konfigurator stehen schon in der E-Mail. Ergänzen Sie nur noch Ihren Namen und Ihre Telefonnummer.</p>
             <div class="direct-contact" aria-label="Direkter Kontakt">
               <a href="tel:+4952515449191">Direkt sprechen · +49 (0) 5251 5449191</a>
-              <a href="https://wa.me/4952515449191?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20LED-Werbetafel%20und%20m%C3%B6chte%20mein%20Projekt%20besprechen." target="_blank" rel="noopener">Per WhatsApp schreiben</a>
+              <a id="inquiryWhatsapp" href="https://wa.me/4952515449191?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20LED-Werbetafel%20und%20m%C3%B6chte%20mein%20Projekt%20besprechen." target="_blank" rel="noopener">Per WhatsApp schreiben</a>
             </div>
           </div>
 
-          <form class="inquiry-card" id="inquiryForm" novalidate>
+          <div class="inquiry-card">
             <div class="inquiry-config" aria-live="polite">
               <div><span>Ausführung</span><strong id="formConfigMount">Fassade · Einseitig</strong></div>
               <div><span>Größe</span><strong id="formConfigSize">5,0 × 3,0 m · 15,0 m²</strong></div>
@@ -623,59 +608,9 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
             </div>
             <a class="config-edit" href="#konfigurator">Konfiguration ändern ↑</a>
 
-            <div class="inquiry-fields">
-              <div class="inquiry-field">
-                <label for="contactName">Name *</label>
-                <input id="contactName" name="contact-name" autocomplete="name" required maxlength="150">
-              </div>
-              <div class="inquiry-field">
-                <label for="company">Firma</label>
-                <input id="company" name="company" autocomplete="organization" maxlength="150">
-              </div>
-              <div class="inquiry-field">
-                <label for="contactEmail">E-Mail *</label>
-                <input id="contactEmail" name="contact-email" type="email" autocomplete="email" required maxlength="200">
-              </div>
-              <div class="inquiry-field">
-                <label for="phone">Telefon <small>(optional)</small></label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="80">
-              </div>
-              <div class="inquiry-field wide">
-                <label for="message">Nachricht <small>(optional)</small></label>
-                <textarea id="message" name="message" maxlength="2000" placeholder="z. B. gewünschter Zeitraum oder Hinweis zum Standort"></textarea>
-              </div>
-
-              <div class="hp-field" aria-hidden="true">
-                <label for="websiteOwl">Website</label>
-                <input id="websiteOwl" name="website-owl" type="text" tabindex="-1" autocomplete="off">
-              </div>
-
-              <label class="privacy-check">
-                <input type="checkbox" name="privacy-consent" value="1" required>
-                <span>Ich habe die <a href="./datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.</span>
-              </label>
-
-              <input type="hidden" name="config-mount" id="formMount">
-              <input type="hidden" name="config-sides" id="formSides">
-              <input type="hidden" name="config-width" id="formWidth">
-              <input type="hidden" name="config-height" id="formHeight">
-              <input type="hidden" name="config-area" id="formArea">
-              <input type="hidden" name="config-distance" id="formDistance">
-              <input type="hidden" name="config-pitch" id="formPitch">
-              <input type="hidden" name="config-system" id="formSystem">
-              <input type="hidden" name="config-zipcode" id="formZipcode">
-              <input type="hidden" name="config-city" id="formCity">
-              <input type="hidden" name="_wpcf7" value="4696">
-              <input type="hidden" name="_wpcf7_locale" value="de_DE">
-              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4696-o1">
-              <input type="hidden" name="_wpcf7_container_post" value="0">
-
-              <div class="inquiry-submit">
-                <button class="btn" id="inquirySubmit" type="submit">Projekt anfragen</button>
-              </div>
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </div>
-          </form>
+            <a class="btn inquiry-mail" id="inquiryMail" href="mailto:info@pixelgold.de">Per E-Mail anfragen</a>
+            <p class="inquiry-note">Öffnet sich kein E-Mail-Programm, schreiben Sie uns direkt an <a href="mailto:info@pixelgold.de">info@pixelgold.de</a>.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -746,16 +681,21 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
     document.getElementById('formConfigSystem').textContent=state.system;
     document.getElementById('formConfigLocation').textContent=location||'noch offen';
 
-    document.getElementById('formMount').value=state.mount;
-    document.getElementById('formSides').value=state.sides;
-    document.getElementById('formWidth').value=de(w);
-    document.getElementById('formHeight').value=de(h);
-    document.getElementById('formArea').value=de(area);
-    document.getElementById('formDistance').value=distanceText;
-    document.getElementById('formPitch').value=p;
-    document.getElementById('formSystem').value=state.system;
-    document.getElementById('formZipcode').value=zip;
-    document.getElementById('formCity').value=city;
+    var config=[
+      'Aufstellung: '+state.mount,
+      'Ausführung: '+state.sides,
+      'Größe: '+de(w)+' × '+de(h)+' m ('+de(area)+' m²)',
+      'Betrachtungsabstand: '+distanceText,
+      'Pixelpitch (Richtwert): '+p.replace('ca. ',''),
+      'System: '+state.system,
+      'Standort: '+(location||'noch offen')
+    ].join('\n');
+    var body='Guten Tag,\n\nich interessiere mich für eine LED-Werbetafel mit dieser Konfiguration:\n\n'+config+
+      '\n\nName:\nFirma:\nTelefon:\n\nMit freundlichen Grüßen';
+    document.getElementById('inquiryMail').href='mailto:info@pixelgold.de?subject='+
+      encodeURIComponent('Anfrage LED-Werbetafel · '+de(area)+' m² · '+state.mount)+'&body='+encodeURIComponent(body);
+    document.getElementById('inquiryWhatsapp').href='https://wa.me/4952515449191?text='+
+      encodeURIComponent('Hallo, ich interessiere mich für eine LED-Werbetafel:\n\n'+config);
   }
   document.querySelectorAll('[data-group]').forEach(function(group){
     group.querySelectorAll('.choice').forEach(function(btn){
@@ -774,48 +714,6 @@ footer{background:#080c10;color:#808b91;padding:28px 0;font-size:12px}
 
   document.getElementById('configRequest').addEventListener('click',function(){
     update();
-  });
-
-  var inquiryForm=document.getElementById('inquiryForm');
-  var inquirySubmit=document.getElementById('inquirySubmit');
-  var formStatus=document.getElementById('formStatus');
-
-  inquiryForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!inquiryForm.reportValidity())return;
-
-    inquirySubmit.disabled=true;
-    inquirySubmit.textContent='Wird gesendet …';
-    formStatus.className='form-status';
-    formStatus.textContent='';
-
-    var data=new FormData(inquiryForm);
-    fetch('https://pixelgold-visuals.de/wp-json/contact-form-7/v1/contact-forms/4696/feedback',{
-      method:'POST',
-      body:data
-    })
-    .then(function(r){return r.json().then(function(j){return {ok:r.ok,data:j};});})
-    .then(function(result){
-      var d=result.data||{};
-      if(result.ok && d.status==='mail_sent'){
-        formStatus.className='form-status success';
-        formStatus.textContent='Danke. Ihre Anfrage wurde gesendet.';
-        inquiryForm.reset();
-        update();
-      }else{
-        var message=d.message||'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.';
-        formStatus.className='form-status error';
-        formStatus.textContent=message;
-      }
-    })
-    .catch(function(){
-      formStatus.className='form-status error';
-      formStatus.textContent='Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es später erneut.';
-    })
-    .finally(function(){
-      inquirySubmit.disabled=false;
-      inquirySubmit.textContent='Projekt anfragen';
-    });
   });
 
   update();
